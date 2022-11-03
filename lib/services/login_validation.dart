@@ -1,16 +1,20 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
+//These Function validates the user login.
+
+//These lists are the predefined username and passwords.
+//You can add and try your usernames and passwords here
 List<Map<String, String>> credentials = [
   {"username": "nirmal", "password": "12345", "fullname": "Nirmal Yohannan"},
   {"username": "prameesh", "password": "1010", "fullname": "Prameesh P"}
 ];
 
 loginStatus() async {
-  print("Checking Login Status");
+  //print("Checking Login Status");
   final prefs = await SharedPreferences.getInstance();
   final bool? isLoggedIn = prefs.getBool("isLoggedIn");
   if (isLoggedIn == true) {
-    print("Login Status: True");
+    //print("Login Status: True");
     return true;
   } else {
     return false;
